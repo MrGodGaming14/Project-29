@@ -7,6 +7,8 @@ var engine, world;
 var stand;
 var polygon;
 
+var gameState = "NotLaunched"
+
 function setup() {
     var canvas = createCanvas(1200, 500);
     engine = Engine.create();
@@ -36,7 +38,7 @@ function setup() {
 
     polygon = new Polygon(200,50);
 
-    slingShot = new SlingShot(polygon.body,{x:200, y:50});
+    slingShot = new SlingShot(polygon.body,{x:200, y:300});
 
 }
 
@@ -68,5 +70,16 @@ function draw() {
 
     polygon.display();
     slingShot.display();
+}
+
+function mouseDragged(){
+    if (gameState!=="launched"){
+        Matter.Body.setPosition(polygon.body, {x: mouseX , y: mouseY});
+    }
+}
+
+function mouseReleased(){
+    slingShot.fly();
+    gameState = "launched";
 }
 

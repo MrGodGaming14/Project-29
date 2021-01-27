@@ -13,17 +13,17 @@ class Polygon {
     display(){
         var pos =this.body.position;
         var angle = this.body.angle;
-        pos.x = mouseX;
-        pos.y = mouseY;
+        //pos.x = mouseX;
+        //pos.y = mouseY;
   
         push();
         translate(pos.x, pos.y);
         rotate(angle);
         rectMode(CENTER);
         strokeWeight(4);
-        image(this.image, this.body.position.x, this.body.position.y);
-        this.image.scale = 0.8
-        rect(0, 0, this.width, this.height, 50, 50);
+        imageMode(CENTER);
+        image(this.image, 0, 0, 100, 100);
+        //rect(0, 0, this.width, this.height, 50, 50);
         pop();
       }
     };

@@ -25,7 +25,7 @@ class SlingShot{
             var pointA = this.sling.bodyA.position;
             var pointB = this.pointB;
             
-            stroke("#4A220D")
+            stroke("#47DEBC")
             if(pointA.x < 220){
             strokeWeight(7);
             }else{
